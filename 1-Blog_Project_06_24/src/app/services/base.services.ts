@@ -8,12 +8,7 @@ export class BaseService {
   constructor(public http: HttpClient) {}
 
   getReq(url: any) {
-    return this.http.get<any>(this.baseUrlUpdate(url), {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json; charset=utf-8',
-        'Access-Control-Allow-Origin': this.baseUrlUpdate(url),
-      }),
-    });
+    return this.http.get<any>(this.baseUrlUpdate(this.baseUrlUpdate(url)))
   }
   /* 
   getPosts(): Observable<any> {
@@ -21,21 +16,11 @@ export class BaseService {
   } */
 
   postReq(url: any, data: any) {
-    return this.http.post<any>(this.baseUrlUpdate(url), data, {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json; charset=utf-8',
-        'Access-Control-Allow-Origin': this.baseUrlUpdate(url),
-      }),
-    });
+    return this.http.post<any>(this.baseUrlUpdate(url), data);
   }
 
   putReq(url: any, data: any) {
-    return this.http.put<any>(this.baseUrlUpdate(url), data, {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json; charset=utf-8',
-        'Access-Control-Allow-Origin': this.baseUrlUpdate(url),
-      }),
-    });
+    return this.http.put<any>(this.baseUrlUpdate(url), data);
   }
 
   baseUrlUpdate(url: string): string {
