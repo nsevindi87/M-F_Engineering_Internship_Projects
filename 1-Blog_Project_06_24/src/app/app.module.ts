@@ -10,12 +10,15 @@ import {MatButtonModule} from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
 import { BaseService } from './services/base.services';
 import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import { BlogDialogComponent } from './home/blog-dialog/blog-dialog.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    BlogDialogComponent
   ],
   imports: [
   BrowserModule,
@@ -25,7 +28,8 @@ import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
     MatCardModule,
     MatButtonModule,
     HttpClientModule,
-    NgbPaginationModule
+    NgbPaginationModule,
+    MatDialogModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
   providers: [BaseService],

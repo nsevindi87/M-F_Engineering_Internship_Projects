@@ -35,8 +35,20 @@
           </p>
         </mat-card-content>
         <mat-card-actions>
-          <button mat-raised-button color="primary">VIEW</button>
-          <button mat-raised-button color="warn">UPDATE</button>
+          <button
+            mat-raised-button
+            color="primary"
+            (click)="openDialog(post, false)"
+          >
+            VIEW
+          </button>
+          <button
+            mat-raised-button
+            color="warn"
+            (click)="openDialog(post, true)"
+          >
+            UPDATE
+          </button>
         </mat-card-actions>
       </mat-card>
     </div>
