@@ -12,6 +12,10 @@ import { BaseService } from './services/base.services';
 import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { BlogDialogComponent } from './home/blog-dialog/blog-dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatDividerModule} from '@angular/material/divider';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 
 @NgModule({
@@ -29,7 +33,12 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatButtonModule,
     HttpClientModule,
     NgbPaginationModule,
-    MatDialogModule
+    MatDialogModule,
+    MatDividerModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatFormFieldModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
   providers: [BaseService],
