@@ -1,21 +1,56 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-3" *ngFor="let post of blogData">
+    <div
+      class="col-md-3 mt-5 col-sm-6"
+      *ngFor="
+        let post of blogData | slice : (page - 1) * pageSize : page * pageSize
+      "
+    >
       <mat-card class="example-card">
         <mat-card-header>
           <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>{{ post.title }}</mat-card-title>
-          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+          <mat-card-title
+            style="
+              display: -webkit-box;
+              -webkit-line-clamp: 1;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            "
+            >{{ post.title }}</mat-card-title
+          >
         </mat-card-header>
         <img mat-card-image src="assets/images/image{{ post.imageId }}.jpg" />
         <mat-card-content>
-          <p>{{ post.body }}</p>
+          <p
+            style="
+              display: -webkit-box;
+              -webkit-line-clamp: 3;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            "
+          >
+            {{ post.body }}
+          </p>
         </mat-card-content>
         <mat-card-actions>
-          <button mat-button>LIKE</button>
-          <button mat-button>SHARE</button>
+          <button mat-raised-button color="primary">VIEW</button>
+          <button mat-raised-button color="warn">UPDATE</button>
         </mat-card-actions>
       </mat-card>
     </div>
+  </div>
+
+  <div style="display: flex; justify-content: center" class="my-3">
+    <ngb-pagination
+      [(page)]="page"
+      [pageSize]="pageSize"
+      [collectionSize]="blogData.length"
+      [maxSize]="3"
+      [boundaryLinks]="true"
+      [rotate]="true"
+      aria-label="Default pagination"
+    ></ngb-pagination>
   </div>
 </div>

@@ -12,6 +12,8 @@ export class HomeComponent {
   constructor(private blogService:BlogService){}
 
   blogData:Array<any> = []
+  pageSize = 8;
+  page = 13;
 
   ngOnInit():void{
     this.blogService.getPosts().subscribe((res)=>{
