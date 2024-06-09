@@ -2,6 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { CommentService } from '../../services/comment.service';
+import { BlogService } from '../../services/blog.service';
 
 @Component({
   selector: 'app-blog-dialog',
@@ -14,6 +15,7 @@ export class BlogDialogComponent {
   title:string="";
   body:string="";
   commentData:any;
+  blogElement:any;
 
   form = new FormGroup({
     title:new FormControl(null,[Validators.required]),
@@ -21,6 +23,7 @@ export class BlogDialogComponent {
   })
 
   constructor(
+    private blogService:BlogService,
     private commentServices:CommentService,
     @Inject(MAT_DIALOG_DATA) 
     private data:any, 
@@ -30,7 +33,8 @@ export class BlogDialogComponent {
       this.form.patchValue({
         title:data.blog.title,
         body:data.blog.body
-      })
+      });
+      this.blogElement = data.blog;
     }else{
       this.imageUrl=data.blog.imageId.toString();
       this.title=data.blog.title;
@@ -49,7 +53,17 @@ export class BlogDialogComponent {
   }
 
   onSubmit(){
-    
+    const request = {
+      title:this.form.get("title")?.value,
+      body:this.form.get("body")?.value,
+      imageId:this.data.blog.imageId,
+      userId:this.data.blog.userId,
+    };
+    this.blogService.updatePost(this.data.blog.id, request).subscribe(res=>{
+      this.blogElement.title=res.title;
+      this.blogElement.body=res.body;
+      this.close()
+    })
   }
 
 }
