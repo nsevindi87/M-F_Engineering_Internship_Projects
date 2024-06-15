@@ -7,47 +7,91 @@
       </h4>
     </div>
     <div class="card-body">
-      <form (ngSubmit)="saveStudent()">
-        <div class="mb-3">
-          <label for="name">Name</label>
-          <input
-            type="text"
-            [(ngModel)]="name"
-            name="name"
-            class="form-control"
-          />
-        </div>
-        <div class="mb-3">
-          <label for="course">Course</label>
-          <input
-            type="text"
-            [(ngModel)]="course"
-            name="course"
-            class="form-control"
-          />
-        </div>
-        <div class="mb-3">
-          <label for="email">Email</label>
-          <input
-            type="text"
-            [(ngModel)]="email"
-            name="email"
-            class="form-control"
-          />
-        </div>
-        <div class="mb-3">
-          <label for="phone">Phone</label>
-          <input
-            type="text"
-            [(ngModel)]="phone"
-            name="phone"
-            class="form-control"
-          />
-        </div>
-        <div class="mb-3">
-          <button type="submit" class="btn btn-primary">Save</button>
-        </div>
-      </form>
+      <div *ngIf="isLoading; else elseForm">
+        <app-loader :title="loadingTitle" />
+      </div>
+      <ng-template #elseForm>
+        <form #studentForm="ngForm" (ngSubmit)="saveStudent()">
+          <div class="mb-3">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              [(ngModel)]="name"
+              name="name"
+              class="form-control"
+              required
+              #nameCtrl="ngModel"
+            />
+            <span
+              *ngIf="nameCtrl.invalid && nameCtrl.touched"
+              class="text-danger"
+            >
+              Name is required</span
+            >
+          </div>
+          <div class="mb-3">
+            <label for="course">Course</label>
+            <input
+              type="text"
+              [(ngModel)]="course"
+              name="course"
+              class="form-control"
+              required
+              #courseCtrl="ngModel"
+            />
+            <span
+              *ngIf="courseCtrl.invalid && courseCtrl.touched"
+              class="text-danger"
+            >
+              Course is required</span
+            >
+          </div>
+          <div class="mb-3">
+            <label for="email">Email</label>
+            <input
+              type="text"
+              [(ngModel)]="email"
+              name="email"
+              class="form-control"
+              required
+              #emailCtrl="ngModel"
+            />
+            <span
+              *ngIf="emailCtrl.invalid && emailCtrl.touched"
+              class="text-danger"
+            >
+              Email is required</span
+            >
+          </div>
+
+          <div class="mb-3">
+            <label for="phone">Phone</label>
+            <input
+              type="text"
+              [(ngModel)]="phone"
+              name="phone"
+              class="form-control"
+              required
+              #phoneCtrl="ngModel"
+            />
+            <span
+              *ngIf="phoneCtrl.invalid && phoneCtrl.touched"
+              class="text-danger"
+            >
+              Phone is required</span
+            >
+          </div>
+          <div class="mb-3">
+            <button
+              type="submit"
+              class="btn btn-primary"
+              [disabled]="studentForm.invalid"
+            >
+              Save
+            </button>
+          </div>
+        </form>
+      </ng-template>
     </div>
   </div>
 </div>
