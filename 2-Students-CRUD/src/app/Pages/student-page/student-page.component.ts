@@ -8,5 +8,18 @@ import { StudentService, StudentResponse } from 'src/app/Services/student.servic
 })
 export class StudentPageComponent {
   constructor (private studentService:StudentService){}
-  students!:StudentResponse;
+  students!:StudentResponse[];
+  isLoading:Boolean = false;
+  ngOnInit(){
+    this.getStudentLists();
+  }
+
+  getStudentLists(){
+    this.isLoading=true;
+    this.studentService.getStudents().subscribe((res:any)=>{
+      console.log(res);
+      this.students = res;
+      this.isLoading = false;
+    })
+  }
 }

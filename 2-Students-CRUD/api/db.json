@@ -1,11 +1,18 @@
 {
   "students": [
     {
-      "id": "1",
       "name": "Ahmet",
-      "course": "Leanne Graham",
-      "email": "bret@gmail.com",
-      "phone": "05554344323"
+      "course": "java",
+      "email": "yeni@gmail.com",
+      "phone": "05554344323",
+      "id": "2"
+    },
+    {
+      "name": "Fatme",
+      "course": "html",
+      "email": "ferda@gmail.com",
+      "phone": "000000001",
+      "id": "1"
     }
   ],
   "posts": [

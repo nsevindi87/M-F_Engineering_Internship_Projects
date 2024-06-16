@@ -5,6 +5,7 @@ import { AboutPageComponent } from './Pages/about-page/about-page.component';
 import { ContactPageComponent } from './Pages/contact-page/contact-page.component';
 import { StudentCreateComponent } from './Pages/student-create/student-create.component';
 import { StudentPageComponent } from './Pages/student-page/student-page.component';
+import { StudentEditComponent } from './Pages/student-edit/student-edit.component';
 
 const routes: Routes = [
   {path:"",component:HomePageComponent, title:"Home page"},
@@ -12,10 +13,11 @@ const routes: Routes = [
   {path:"contact-us",component:ContactPageComponent, title:"Contact Us"},
   {path:"students",component:StudentPageComponent, title:"Student List"},
   {path:"students/create",component:StudentCreateComponent, title:"Create Student"},
+  {path:"students/:id/edit",component:StudentEditComponent, title:"Edit Student"},
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+exports: [RouterModule]
 })
 export class AppRoutingModule { }
