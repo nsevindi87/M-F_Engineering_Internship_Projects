@@ -2,6 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+export interface StudentResponse{
+  id:number
+  name:string
+  course:string
+  email:string
+  phone:string
+}
+
+
 @Injectable({
   providedIn: 'root'
 })
