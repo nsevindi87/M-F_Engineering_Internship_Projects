@@ -22,4 +22,15 @@ export class StudentPageComponent {
       this.isLoading = false;
     })
   }
+
+  deleteStudent(event:any, studentId:number){
+    if(confirm("Are you sure?")){
+      event.target.innerText  = "Deleting...";
+      this.studentService.deleteStudent(studentId).subscribe((res:any)=>{
+        this.getStudentLists()
+        alert(res)
+      })
+    }
+
+  }
 }

@@ -37,7 +37,6 @@ constructor(private route: ActivatedRoute, private studentService:StudentService
     this.studentService.updateStudent(inputData, this.studentId).subscribe({
       next:(res:any)=>{
         console.log(res);
-        alert(res)
         this.isLoading = false;
       },
       error:(err)=>{

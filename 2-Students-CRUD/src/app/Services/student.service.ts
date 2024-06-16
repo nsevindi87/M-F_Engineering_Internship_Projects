@@ -10,7 +10,6 @@ export interface StudentResponse{
   phone:string
 }
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -30,8 +29,12 @@ export class StudentService {
     return this.httpClient.post("http://localhost:3000/students", pInputData);
   }
 
-  updateStudent(inputData:object, studentId:number){
+  updateStudent(inputData:object, studentId:any){
     return this.httpClient.put(`http://localhost:3000/students/${studentId}`, inputData);
+  }
+
+  deleteStudent(studentId:any){
+    return this.httpClient.delete(`http://localhost:3000/students/${studentId}`);
   }
 
 }
