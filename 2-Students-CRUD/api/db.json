@@ -4,15 +4,22 @@
       "name": "Ahmet",
       "course": "java",
       "email": "yeni@gmail.com",
-      "phone": "05554344323",
+      "phone": "343242",
       "id": "2"
     },
     {
       "name": "Merve Sevindi",
       "course": "C1",
       "email": "nsevindi87@gmail.com",
-      "phone": "0782358852",
+      "phone": "234234",
       "id": "fd24"
+    },
+    {
+      "id": "499e",
+      "name": "John",
+      "course": "Java",
+      "email": "john@gmail.com",
+      "phone": "1232313"
     }
   ],
   "posts": [
