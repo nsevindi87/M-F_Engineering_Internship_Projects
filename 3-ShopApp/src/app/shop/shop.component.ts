@@ -16,7 +16,9 @@ import { Category } from '../model/category.model';
 export class ShopComponent{
 
     public selectedCategory:Category|null = null;
-    
+    public productsPerPage = 2;
+    selectedPage = 1;
+
 
     constructor(
         private productRepository:ProductRepository,
@@ -24,7 +26,8 @@ export class ShopComponent{
     ){}
 
     get products():Product[]{
-        return this.productRepository.getProducts(this.selectedCategory)
+        let index = (this.selectedPage-1) * this.productsPerPage
+        return this.productRepository.getProducts(this.selectedCategory).slice(index, index+ this.productsPerPage)
     }
 
     get categories():Category[]{
@@ -33,5 +36,17 @@ export class ShopComponent{
 
     changeCategory(newCategory:Category|null){
         this.selectedCategory = newCategory;
+    }
+
+    changePage(p:number){
+        this.selectedPage = p
+    }
+
+    get pageNumbers():number[]{
+        return Array(
+            Math.ceil(this.productRepository
+                .getProducts(this.selectedCategory).length/this.productsPerPage)
+        ).fill(0)
+        .map((a,i)=>i+1);
     }
 }
