@@ -5,49 +5,56 @@
             "name": "Samsung S5",
             "price": 1000,
             "imageUrl": "1.jpeg",
-            "description": "Good"
+            "description": "Good",
+            "category":"Phone"
           },
           {
             "id": 2,
             "name": "Samsung S6",
             "price": 1100,
             "imageUrl": "2.jpeg",
-            "description": "Better"
+            "description": "Better",
+            "category":"Phone"
           },
           {
             "id": 3,
             "name": "Samsung S7",
             "price": 1200,
             "imageUrl": "3.jpeg",
-            "description": "Satisfied"
+            "description": "Satisfied",
+            "category":"Phone"
           },
           {
             "id": 4,
             "name": "Samsung S8",
             "price": 1600,
             "imageUrl": "4.jpeg",
-            "description": "Normal"
+            "description": "Normal",
+            "category":"Phone"
           },
           {
             "id": 5,
-            "name": "Samsung S9",
+            "name": "Samsung S9 - Computer",
             "price": 1300,
             "imageUrl": "5.jpeg",
-            "description": "Perfect"
+            "description": "Perfect",
+            "category":"Computer"
           },
           {
             "id": 6,
-            "name": "Samsung S2",
+            "name": "Samsung S2 - Computer",
             "price": 800,
             "imageUrl": "6.jpeg",
-            "description": "Good"
+            "description": "Good",
+            "category":"Computer"
           },
           {
             "id": 7,
-            "name": "Samsung S1",
+            "name": "Samsung S1 - Tablet",
             "price": 600,
             "imageUrl": "7.jpeg",
-            "description": "Good"
+            "description": "Good",
+            "category":"Tablet"
           }
     ],
     "categories": [
