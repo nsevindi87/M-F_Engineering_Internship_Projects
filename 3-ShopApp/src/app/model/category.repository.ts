@@ -3,7 +3,6 @@ import { RestService } from './rest.service';
 import { Category } from './category.model';
 
 @Injectable()
-
 export class CategoryRepository implements OnInit{
     private categories: Category[] = [];
 
