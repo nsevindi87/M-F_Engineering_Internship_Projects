@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { Product } from './product.model';
 import { Category } from './category.model';
 import { Order } from './order.model';
@@ -9,6 +9,7 @@ import { Order } from './order.model';
 export class RestService {
 
   baseUrl:string="http://localhost:3500/"
+  token!:string|null;
 
   constructor(private http:HttpClient) { }
 
@@ -22,5 +23,17 @@ export class RestService {
 
   saveOrder(order:Order):Observable<Order>{
     return this.http.post<Order>(this.baseUrl+"orders",order)
+  }
+
+  authentication(username:string, password:string):Observable<boolean>{
+    return this.http.post<any>(this.baseUrl+"login",{
+      username:username,
+      password:password
+    }).pipe(map(response=>{
+      this.token = response.success ? response.token : null;
+      console.log(this.token);
+      return response.success;
+      
+    }))
   }
 }

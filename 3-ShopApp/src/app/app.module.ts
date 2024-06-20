@@ -19,6 +19,7 @@ BrowserModule,
       {path:"shop", component:ShopComponent},
       {path:"cart", component:CartDetailComponent},
       {path:"checkout", component:CheckoutComponent},
+      {path:"admin", loadChildren:() => import('./admin/admin.module').then(m => m.AdminModule)},
       {path:"**", redirectTo:"/shop"},
     ])
   ],
