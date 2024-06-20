@@ -14,29 +14,22 @@ import { Router } from "@angular/router";
 
 export class ShopComponent{
 
-    public selectedCategory:Category|null = null;
-    public productsPerPage = 10;
-    selectedPage = 1;
-
+    public selectedCategory:Category | null = null;
+    public productsPerPage = 2;
+    public selectedPage = 1;
+    public selectedProducts:Product[]=[]
 
     constructor(
         private productRepository:ProductRepository,
-        private categoryRepository: CategoryRepository,
-        private cart: Cart,
-        private router:Router,
     ){}
 
     get products():Product[]{
-        let index = (this.selectedPage-1) * this.productsPerPage
-        return this.productRepository.getProducts(this.selectedCategory).slice(index, index+ this.productsPerPage)
-    }
+        let index = (this.selectedPage-1) * this.productsPerPage;
+        this.selectedProducts = this.productRepository
+                                .getProducts(this.selectedCategory);
 
-    get categories():Category[]{
-        return this.categoryRepository.getCategories()
-    }
-
-    changeCategory(newCategory:Category|null){
-        this.selectedCategory = newCategory;
+        return this.selectedProducts
+                .slice(index, index+ this.productsPerPage)
     }
 
     changePage(p:number){
@@ -51,8 +44,14 @@ export class ShopComponent{
         .map((a,i)=>i+1);
     }
 
-    addProductToCart(product:Product){
-        this.cart.addItem(product)
-        this.router.navigateByUrl("/cart")
+    changePageSize(size:number){
+
+        this.productsPerPage = size
+
+        this.changePage(1)
+    }
+
+    getCategory(category:Category|null){
+        this.selectedCategory = category
     }
 }

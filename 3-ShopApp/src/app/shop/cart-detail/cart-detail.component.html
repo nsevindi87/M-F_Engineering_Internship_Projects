@@ -32,7 +32,7 @@
                   style="width: 50px"
                   class="form-control"
                   [value]="item.quantity"
-                  (change)="cart.updateQuantity(item.product, $event)"
+                  (change)="cart.updateQuantity(item.product, $any($event.target).value)"
                 />
               </td>
               <td>{{ item.quantity * item.product.price }} $</td>

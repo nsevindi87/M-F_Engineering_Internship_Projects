@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-md-4" *ngFor="let p of products">
+    <div class="card mb-3">
+      <img src="/assets/img/{{ p.imageUrl }}" alt="{{ p.name }}" />
+      <div class="card-body">
+        <h4 class="cart-title">
+          <a href="">{{ p.name }}</a>
+        </h4>
+        <small class="text-muted">
+          <i>{{ p.price }} $</i>
+        </small>
+      </div>
+      <div class="card-footer text-center">
+        <button class="btn btn-outline-primary btn-sm">Details</button>
+        <button
+          class="btn btn-outline-primary btn-sm mx-3"
+          (click)="addProductToCart(p)"
+        >
+          Add To Cart
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
