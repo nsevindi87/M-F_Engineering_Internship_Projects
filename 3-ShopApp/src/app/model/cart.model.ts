@@ -17,7 +17,10 @@ export class Cart {
         this.calculate()
     }
     
-    updateQuantity(product:Product, quantity:number){
+    updateQuantity(product:Product, event: Event){
+        const inputElement = event.target as HTMLInputElement;
+        const quantity = parseInt(inputElement.value, 10);
+
         let item=this.items.find(i=>i.product.id==product.id)
         if(item!=undefined){
             item.quantity = quantity;
