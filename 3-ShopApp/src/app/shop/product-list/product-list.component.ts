@@ -11,13 +11,23 @@ import { Product } from 'src/app/model/product.model';
 export class ProductListComponent {
 
   @Input () products: Product[]=[];
+  public selectedProduct:Product | null = null;
 
   constructor(      
     private cart: Cart,
     private router:Router,
     ){}
+
   addProductToCart(product:Product){
     this.cart.addItem(product)
     this.router.navigateByUrl("/cart")
-}
+  }
+
+  displayDetails(product:Product){
+    this.selectedProduct = product;
+  }
+
+  hideDetails(){
+    this.selectedProduct = null;
+  }
 }
