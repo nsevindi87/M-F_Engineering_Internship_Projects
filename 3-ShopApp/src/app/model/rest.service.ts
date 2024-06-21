@@ -25,6 +25,21 @@ export class RestService {
     return this.http.post<Order>(this.baseUrl+"orders",order)
   }
 
+  addProduct(product:Product):Observable<any>{
+    return this.http.post(this.baseUrl+"products", product/* ,{
+      headers: new HttpHeaders({
+        "Authorization":"Bearer<${this.token}>"
+      })
+    } */)
+  }
+  updateProduct(product:Product):Observable<any>{
+    return this.http.post(this.baseUrl+"products"+ product.id, product/* ,{
+      headers: new HttpHeaders({
+        "Authorization":"Bearer<${this.token}>"
+      })
+    } */)
+  }
+
   authentication(username:string, password:string):Observable<boolean>{
     return this.http.post<any>(this.baseUrl+"login",{
       username:username,
@@ -33,7 +48,8 @@ export class RestService {
       this.token = response.success ? response.token : null;
       console.log(this.token);
       return response.success;
-      
     }))
   }
+
+
 }

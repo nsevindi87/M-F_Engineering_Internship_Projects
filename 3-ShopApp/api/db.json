@@ -1,7 +1,7 @@
 {
   "products": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Samsung S5",
       "price": 1000,
       "imageUrl": "1.jpeg",
@@ -9,7 +9,7 @@
       "category": "Phone"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Samsung S6",
       "price": 1100,
       "imageUrl": "2.jpeg",
@@ -17,7 +17,7 @@
       "category": "Phone"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Samsung S7",
       "price": 1200,
       "imageUrl": "3.jpeg",
@@ -25,7 +25,7 @@
       "category": "Phone"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Samsung S8",
       "price": 1600,
       "imageUrl": "4.jpeg",
@@ -33,7 +33,7 @@
       "category": "Phone"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Samsung S9 - Computer",
       "price": 1300,
       "imageUrl": "5.jpeg",
@@ -41,7 +41,7 @@
       "category": "Computer"
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Samsung S2 - Computer",
       "price": 800,
       "imageUrl": "6.jpeg",
@@ -49,25 +49,33 @@
       "category": "Computer"
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Samsung S1 - Tablet",
       "price": 600,
       "imageUrl": "7.jpeg",
       "description": "Good",
       "category": "Tablet"
+    },
+    {
+      "id": 0,
+      "name": "New Product",
+      "price": "1000",
+      "imageUrl": "1.jpeg",
+      "description": "asasdasd",
+      "category": ""
     }
   ],
   "categories": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Phone"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Computer"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Tablet"
     }
   ],
