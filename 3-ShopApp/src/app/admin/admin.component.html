@@ -2,37 +2,39 @@
   <div class="row">
     <div class="bg-primary p-2 text-white">Admin Panel</div>
   </div>
-  <div class="row">
+  <div class="row mt-3">
     <div class="col-3">
       <button
         routerLinkActive="active"
         routerLink="/shop"
-        class="btn btn-outline-info btn-block"
+        class="btn btn-outline-info w-100 my-2"
       >
         Shop
       </button>
       <button
         routerLinkActive="active"
         routerLink="/admin/main/products"
-        class="btn btn-outline-info btn-block"
+        class="btn btn-outline-info w-100"
       >
         Products
       </button>
       <button
         routerLinkActive="active"
         routerLink="/admin/main/categories"
-        class="btn btn-outline-info btn-block"
+        class="btn btn-outline-info w-100 my-2"
       >
         Categories
       </button>
       <button
         routerLinkActive="active"
         routerLink="/admin/main/orders"
-        class="btn btn-outline-info btn-block"
+        class="btn btn-outline-info w-100"
       >
         Orders
       </button>
-      <button click="logout()" class="btn btn-outline-danger">Logout</button>
+      <button click="logout()" class="btn btn-outline-danger w-100 my-2">
+        Logout
+      </button>
     </div>
     <div class="col-9">
       <router-outlet></router-outlet>

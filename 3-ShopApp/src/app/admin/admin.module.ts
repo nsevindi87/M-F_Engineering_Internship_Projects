@@ -8,10 +8,10 @@ import { FormsModule } from '@angular/forms';
 import { AuthGuard } from './auth.guard';
 
 import { ProductFormComponent } from './products/product-form/product-form.component';
+import { ProductListComponent } from './products/product-list/product-list.component';
 import { CategoryListComponent } from './categories/category-list/category-list.component';
 import { CategoryFormComponent } from './categories/category-form/category-form.component';
 import { OrderListComponent } from './orders/order-list/order-list.component';
-import { ProductListComponent } from './products/product-list/product-list.component';
 
 
 @NgModule({
