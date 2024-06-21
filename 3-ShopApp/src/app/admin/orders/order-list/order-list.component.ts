@@ -8,10 +8,15 @@ import { OrderRepository } from '../../../model/order.repository';
   styleUrls: ['./order-list.component.css']
 })
 export class OrderListComponent {
+  public orders: Order[] = [];
 
-  constructor(private orderRepository:OrderRepository){ }
-  
-  getOrders():Order[]{
+  constructor(private orderRepository: OrderRepository) {}
+
+  ngOnInit(): void {
+    this.orders = this.getOrders();
+  }
+
+  getOrders(): Order[] {
     return this.orderRepository.getOrders();
   }
 }

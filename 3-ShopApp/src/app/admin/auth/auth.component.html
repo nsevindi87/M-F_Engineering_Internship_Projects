@@ -1,29 +1,35 @@
+<h3>Login Page</h3>
 <div class="bg-danger p-2 text-center text-white" *ngIf="errorMessage != null">
   {{ errorMessage }}
 </div>
-<div class="p-2">
-  <form #form="ngForm" (ngSubmit)="login(form)">
-    <div class="form-group">
-      <label>Username</label>
-      <input
-        class="form-control"
-        name="username"
-        [(ngModel)]="username"
-        required
-      />
-    </div>
-    <div class="form-group">
-      <label>Password</label>
-      <input
-        class="form-control"
-        name="password"
-        [(ngModel)]="password"
-        required
-      />
-    </div>
-    <div class="text-center">
-      <button class="btn btn-secondary" routerLink="/">Back</button>
-      <button class="btn btn-primary ms-2" type="submit">Log In</button>
-    </div>
-  </form>
+<div class="container d-flex justify-content-center align-items-center pt-100">
+  <div class="p-2 w-50 border p-5 shadow" style="border-radius: 20px">
+    <form #form="ngForm" (ngSubmit)="login(form)">
+      <div class="form-group">
+        <label>Username</label>
+        <input
+          class="form-control"
+          style="outline: none"
+          name="username"
+          [(ngModel)]="username"
+          required
+        />
+      </div>
+      <div class="form-group mt-2">
+        <label>Password</label>
+        <input
+          type="password"
+          class="form-control"
+          style="outline: none"
+          name="password"
+          [(ngModel)]="password"
+          required
+        />
+      </div>
+      <div class="text-center pt-2">
+        <button class="btn btn-warning w-25" routerLink="/">Back</button>
+        <button class="btn btn-danger w-25 ms-2" type="submit">Log In</button>
+      </div>
+    </form>
+  </div>
 </div>

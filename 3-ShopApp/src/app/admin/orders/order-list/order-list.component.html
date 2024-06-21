@@ -1,19 +1,58 @@
 <table class="table table-hover table-striped">
   <thead>
     <tr>
-      <th></th>
-      <th>name</th>
-      <th>price</th>
-      <th></th>
+      <th>Order ID</th>
+      <th>Customer Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Address</th>
+      <th>City</th>
     </tr>
   </thead>
-  <tbody>
-    <tr *ngFor="let p of getOrders()">
-      <td>
-        <!--  <img src="assets/img/{{ p.imageUrl }}" width="50px" /> -->
-      </td>
-      <td>{{ p.name }}</td>
-      <td>{{ p.email }}</td>
-    </tr>
+  <tbody *ngFor="let order of orders">
+    <td colspan="6">
+      <table class="table">
+        <thead>
+          <tr class="table-dark">
+            <td>{{ order.id }}</td>
+            <td>{{ order.name }}</td>
+            <td>{{ order.email }}</td>
+            <td>{{ order.phone }}</td>
+            <td>{{ order.address }}</td>
+            <td>{{ order.city }}</td>
+          </tr>
+        </thead>
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Quantity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of order.cart.items">
+            <td>
+              <img src="assets/img/{{ item.product.imageUrl }}" width="50px" />
+            </td>
+            <td>{{ item.product.name }}</td>
+            <td>{{ item.product.price | currency }}</td>
+            <td>{{ item.product.description }}</td>
+            <td>{{ item.product.category }}</td>
+            <td>{{ item.quantity }}</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Total: {{ order.cart.total | currency }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </td>
   </tbody>
 </table>

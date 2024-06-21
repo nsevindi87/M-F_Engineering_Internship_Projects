@@ -44,7 +44,7 @@
       "id": "6",
       "name": "Samsung S2 - Computer",
       "price": 800,
-      "imageUrl": "6.jpeg",
+      "imageUrl": "66.jpeg",
       "description": "Good",
       "category": "Computer"
     },
@@ -69,15 +69,11 @@
     {
       "id": "3",
       "name": "Tablet"
-    },
-    {
-      "id": "d1dd",
-      "name": "New"
     }
   ],
   "orders": [
     {
-      "id": "b444",
+      "id": "3a24",
       "cart": {
         "items": [
           {
@@ -90,21 +86,36 @@
               "category": "Phone"
             },
             "quantity": 1
-          },
+          }
+        ],
+        "itemCount": 1,
+        "total": 1000
+      },
+      "isSent": false,
+      "name": "Nizami Sevindi",
+      "address": "In der Härti 11",
+      "city": "winterthur",
+      "phone": "0779579844",
+      "email": "nsevindi87@gmail.com"
+    },
+    {
+      "id": "8d16",
+      "cart": {
+        "items": [
           {
             "product": {
-              "id": "2",
-              "name": "Samsung S6",
-              "price": 1100,
-              "imageUrl": "2.jpeg",
-              "description": "Better",
+              "id": "1",
+              "name": "Samsung S5",
+              "price": 1000,
+              "imageUrl": "1.jpeg",
+              "description": "Good",
               "category": "Phone"
             },
             "quantity": 1
           }
         ],
-        "itemCount": 2,
-        "total": 2100
+        "itemCount": 1,
+        "total": 1000
       },
       "isSent": false,
       "name": "Nizami Sevindi",

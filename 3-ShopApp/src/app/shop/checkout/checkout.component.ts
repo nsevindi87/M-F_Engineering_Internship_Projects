@@ -24,5 +24,6 @@ export class CheckoutComponent {
           this.submitted = false
         })
     }
+
   }
 }
