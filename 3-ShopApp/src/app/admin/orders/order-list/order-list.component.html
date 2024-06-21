@@ -1,1 +1,19 @@
-<p>order-list works!</p>
+<table class="table table-hover table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>name</th>
+      <th>price</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of getOrders()">
+      <td>
+        <!--  <img src="assets/img/{{ p.imageUrl }}" width="50px" /> -->
+      </td>
+      <td>{{ p.name }}</td>
+      <td>{{ p.email }}</td>
+    </tr>
+  </tbody>
+</table>

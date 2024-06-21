@@ -11,7 +11,6 @@ import { NgForm } from '@angular/forms';
 })
 export class ProductFormComponent {
  public editing:boolean=false;
-
  public product: Product | undefined = new Product("", 0);
 
  constructor(private activeRoute:ActivatedRoute, private repository:ProductRepository, private router:Router){

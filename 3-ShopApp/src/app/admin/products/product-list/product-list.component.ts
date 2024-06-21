@@ -8,16 +8,13 @@ import { ProductRepository } from '../../../model/product.repository';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent {
-  constructor(private productRepository:ProductRepository){
-
-  }
+  constructor(private productRepository:ProductRepository){}
 
   getProducts():Product[]{
     return this.productRepository.getProducts();
   }
 
-  deleteProduct(p:any){
-    console.log(p);
-    
+  deleteProduct(product:Product){
+    this.productRepository.deleteProduct(product)
   }
 }

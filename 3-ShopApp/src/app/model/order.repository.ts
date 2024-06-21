@@ -7,7 +7,9 @@ import { RestService } from './rest.service';
 export class OrderRepository{
     private orders : Order[] = [];
 
-    constructor(private restService:RestService){}
+    constructor(private restService: RestService){
+        this.restService.getOrders().subscribe(orders=>this.orders = orders)
+    }
 
     getOrders():Order[]{
         return this.orders;
