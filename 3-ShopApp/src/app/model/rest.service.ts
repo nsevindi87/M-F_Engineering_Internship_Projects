@@ -33,7 +33,7 @@ export class RestService {
     } */)
   }
   updateProduct(product:Product):Observable<any>{
-    return this.http.post(this.baseUrl+"products"+ product.id, product/* ,{
+    return this.http.put(this.baseUrl+"products"+ product.id, product/* ,{
       headers: new HttpHeaders({
         "Authorization":"Bearer<${this.token}>"
       })

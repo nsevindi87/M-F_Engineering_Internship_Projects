@@ -57,11 +57,11 @@
       "category": "Tablet"
     },
     {
-      "id": 0,
-      "name": "New Product",
-      "price": "1000",
+      "id": "7874",
+      "name": "yeni",
+      "price": "5555",
       "imageUrl": "1.jpeg",
-      "description": "asasdasd",
+      "description": "uhuhu",
       "category": ""
     }
   ],

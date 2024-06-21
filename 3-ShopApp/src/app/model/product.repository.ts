@@ -16,7 +16,7 @@ export class ProductRepository implements OnInit{
     ngOnInit(){
     }
 
-    getProduct(id:number):Product | undefined{
+    getProduct(id:any):Product | undefined{
         return this.products.find(i => i.id == id);
     }
 
@@ -28,7 +28,7 @@ export class ProductRepository implements OnInit{
     }
 
     saveProduct(product:Product){
-        if(product.id==null || product.id==0){
+        if(product.id==null || product.id==""){
             this.restService.addProduct(product).subscribe(p=>this.products.push(p))
         }else{
             this.restService.updateProduct(product).subscribe(p=>{
