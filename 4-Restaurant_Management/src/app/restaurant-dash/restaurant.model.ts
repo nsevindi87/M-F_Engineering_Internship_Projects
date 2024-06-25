@@ -4,5 +4,5 @@ export class RestaurantData{
     email:string="";
     mobile:string="";
     address:string="";
-    service:string="";
+    services:string="";
 }

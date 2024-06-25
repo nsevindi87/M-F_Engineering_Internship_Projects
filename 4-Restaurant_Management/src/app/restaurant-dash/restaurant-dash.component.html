@@ -32,6 +32,7 @@
       class="form-control"
     />
   </div>
+
   <div class="table-responsive">
     <table class="table mt-4">
       <thead>
@@ -46,7 +47,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr *ngFor="let resto of allRestaurantData; let i = index">
           <td>1</td>
           <td>Zurich</td>
           <td>kingrestaurant@gmx.ch</td>
@@ -68,8 +69,8 @@
     </table>
 
     <!--  <div class="pagination">
-      <pagination-controls></pagination-controls>
-    </div> -->
+        <pagination-controls></pagination-controls>
+        </div> -->
 
     <div
       class="modal fade"
@@ -113,7 +114,7 @@
                   class="form-control"
                   id="inputName"
                   aria-describedby="nameHelp"
-                  placeholder="Enter your Name"
+                  placeholder="Mr. Example"
                 />
               </div>
               <br />
@@ -125,7 +126,7 @@
                   class="form-control"
                   id="inputEmail"
                   aria-describedby="emailHelp"
-                  placeholder="Enter your Email"
+                  placeholder="example@example.com"
                 />
               </div>
               <br />
@@ -137,7 +138,7 @@
                   class="form-control"
                   id="inputMobile"
                   aria-describedby="numberHelp"
-                  placeholder="Enter your Number"
+                  placeholder="077 123 4567"
                 />
               </div>
               <br />
@@ -149,7 +150,7 @@
                   class="form-control"
                   id="inputAddress"
                   aria-describedby="numberHelp"
-                  placeholder="Enter your Address"
+                  placeholder="Example Street - Zurich"
                 />
               </div>
               <br />
@@ -161,7 +162,7 @@
                   class="form-control"
                   id="inputServices"
                   aria-describedby="servicesHelp"
-                  placeholder="Enter your Services"
+                  placeholder="Fast Food"
                 />
               </div>
               <br />
@@ -175,8 +176,20 @@
             >
               Close
             </button>
-            <button type="button" class="btn btn-success">Add Details</button>
-            <button type="button" class="btn btn-success">
+            <button
+              *ngIf="showAdd"
+              type="button"
+              class="btn btn-success"
+              (click)="addResto()"
+            >
+              Add Details
+            </button>
+            <button
+              *ngIf="showBtn"
+              type="button"
+              class="btn btn-success"
+              (click)="updateRes()"
+            >
               Update Details
             </button>
           </div>

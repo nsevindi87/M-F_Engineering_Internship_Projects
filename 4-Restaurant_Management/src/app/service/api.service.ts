@@ -8,9 +8,10 @@ import { map } from 'rxjs';
 export class ApiService {
 
   constructor(private http:HttpClient) { }
+  
   getRestaurant(){
     return this.http.get<any>("http://localhost:3000/posts").pipe(map((res:any)=>{
-      return res
+      return res;
     }))
   }
 
