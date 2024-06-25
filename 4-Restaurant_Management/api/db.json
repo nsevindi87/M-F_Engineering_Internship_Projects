@@ -1,0 +1,22 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "name": "Samsung S5",
+      "email": "Samsung S5",
+      "mobile": 1000,
+      "address": "1.jpeg",
+      "services": "Good"
+    }
+  ],
+  "categories": [],
+  "signup": [
+    {
+      "id": 1,
+      "name": "Samsung S5",
+      "email": "Samsung S5",
+      "mobile": "Samsung S5",
+      "password": "Samsung S5"
+    }
+  ]
+}

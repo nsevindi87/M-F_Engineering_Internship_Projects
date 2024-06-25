@@ -1,1 +1,83 @@
-<p>signup works!</p>
+<div class="container">
+  <div class="row justify-content-center align-items-center vh-100">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header bg-warning">
+          <div class="text-center">
+            <h1>Sign Up Page</h1>
+            <h5>Restaurant Manegement Sys.v2</h5>
+            <strong>Get Free Membership</strong>
+          </div>
+        </div>
+        <div class="card-body">
+          <form action="">
+            <div class="form-group">
+              <div class="mb-3">
+                <label for="name">Name</label>
+                <input
+                  type="text"
+                  formControlName="name"
+                  maxlength="20"
+                  id="name"
+                  class="form-control"
+                  placeholder="Please write your Name"
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="mb-3">
+                <label for="mobile">Mobile Number</label>
+                <input
+                  type="mobile"
+                  formControlName="mobile"
+                  maxlength="10"
+                  id="mobile"
+                  class="form-control"
+                  placeholder="Please write your Mobile Number"
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="mb-3">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  formControlName="email"
+                  maxlength="10"
+                  id="email"
+                  class="form-control"
+                  placeholder="Please write your E-Mail"
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="mb-3">
+                <label for="password">Password</label>
+                <input
+                  type="password"
+                  formControlName="email"
+                  maxlength="10"
+                  id="password"
+                  class="form-control"
+                  placeholder="Please write your Password"
+                />
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="card-bottom container">
+          <div class="d-flex gap-3 mb-3">
+            <button
+              type="button"
+              class="btn btn-secondary w-50"
+              routerLink="/login"
+            >
+              Login
+            </button>
+            <button type="button" class="btn btn-warning w-50">Sign-up</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
