@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -27,10 +28,13 @@ export class LoginComponent implements OnInit {
         u.email === this.formValue.value.email && 
         u.password === this.formValue.value.password
       )
-      
+
       if(user){
           alert("Successfully logged in")
-          this.router.navigate(['restaurant'])
+          this.formValue.reset();
+          this.router.navigate(['restaurant']);
+          localStorage.setItem('token', "eyJlIjoiSFMyNTYiLCJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.TUu0Ch8amzH36ycGNnDqX5933n-krlGpzzr4oYh5zh4" )
+          this.formValue.value.email ? localStorage.setItem('usertype', 'employee') : ""
         }else{
           alert("User not found with these credentials")
         }
