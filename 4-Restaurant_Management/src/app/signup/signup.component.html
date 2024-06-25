@@ -10,7 +10,7 @@
           </div>
         </div>
         <div class="card-body">
-          <form action="">
+          <form [formGroup]="myForm" (ngSubmit)="signup()">
             <div class="form-group">
               <div class="mb-3">
                 <label for="name">Name</label>
@@ -26,11 +26,22 @@
             </div>
             <div class="form-group">
               <div class="mb-3">
+                <label for="mail">Email</label>
+                <input
+                  type="mail"
+                  formControlName="email"
+                  id="mail"
+                  class="form-control"
+                  placeholder="Please write your E-Mail"
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="mb-3">
                 <label for="mobile">Mobile Number</label>
                 <input
                   type="mobile"
                   formControlName="mobile"
-                  maxlength="10"
                   id="mobile"
                   class="form-control"
                   placeholder="Please write your Mobile Number"
@@ -39,23 +50,10 @@
             </div>
             <div class="form-group">
               <div class="mb-3">
-                <label for="email">Email</label>
-                <input
-                  type="email"
-                  formControlName="email"
-                  maxlength="10"
-                  id="email"
-                  class="form-control"
-                  placeholder="Please write your E-Mail"
-                />
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="mb-3">
                 <label for="password">Password</label>
                 <input
                   type="password"
-                  formControlName="email"
+                  formControlName="password"
                   maxlength="10"
                   id="password"
                   class="form-control"
@@ -63,19 +61,21 @@
                 />
               </div>
             </div>
+            <div class="container">
+              <div class="d-flex gap-3 mb-3">
+                <button
+                  type="button"
+                  class="btn btn-secondary w-50"
+                  routerLink="/login"
+                >
+                  Login
+                </button>
+                <button type="submit" class="btn btn-warning w-50">
+                  Sign-up
+                </button>
+              </div>
+            </div>
           </form>
-        </div>
-        <div class="card-bottom container">
-          <div class="d-flex gap-3 mb-3">
-            <button
-              type="button"
-              class="btn btn-secondary w-50"
-              routerLink="/login"
-            >
-              Login
-            </button>
-            <button type="button" class="btn btn-warning w-50">Sign-up</button>
-          </div>
         </div>
       </div>
     </div>

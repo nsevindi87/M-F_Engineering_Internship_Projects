@@ -1,7 +1,7 @@
 {
   "posts": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Samsung S5",
       "email": "Samsung S5",
       "mobile": 1000,
@@ -12,11 +12,32 @@
   "categories": [],
   "signup": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Samsung S5",
       "email": "Samsung S5",
       "mobile": "Samsung S5",
       "password": "Samsung S5"
+    },
+    {
+      "id": "d92f",
+      "name": "Nizami Sevindi",
+      "email": "nsevindi87@gmail.com",
+      "mobile": "0779579844",
+      "password": "123"
+    },
+    {
+      "id": "7621",
+      "name": "Nizami Sevindi",
+      "email": "nsevindi87@gmail.com",
+      "mobile": "0779579844",
+      "password": "1234"
+    },
+    {
+      "id": "9ab2",
+      "name": "Nizami Sevindi",
+      "mail": "nsevindi87@gmail.com",
+      "mobile": "0779579844",
+      "password": "111"
     }
   ]
 }
