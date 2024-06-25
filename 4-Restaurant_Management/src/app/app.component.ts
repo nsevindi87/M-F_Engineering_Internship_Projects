@@ -1,0 +1,10 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  template: '<router-outlet></rooter-outlet>',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = '4-Restaurant_Management';
+}
