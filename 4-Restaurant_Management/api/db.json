@@ -1,28 +1,28 @@
 {
   "posts": [
     {
-      "id": "2",
-      "name": "Samsung S7",
-      "email": "Samsung S6",
-      "mobile": 3000,
-      "address": "3.jpeg",
-      "services": "Good"
+      "id": "6227",
+      "name": "Zurich HB",
+      "email": "lowenking_80@gmail.com",
+      "mobile": 775453344,
+      "address": "Bahnhoffstrasse 33 Zurich CH",
+      "services": "Fast Food"
     },
     {
-      "id": 0,
-      "name": "Nizami Sevindi",
-      "email": "nsevindi87@gmail.com",
-      "mobile": 779579844,
-      "address": "In der Härti 11",
+      "id": "3ca6",
+      "name": "Schatau de Mond",
+      "email": "historiclandres@gmx.ch",
+      "mobile": 783444323,
+      "address": "Rue de Revenue 34 Genf",
       "services": "Pizza"
     },
     {
-      "id": 0,
-      "name": "Merve Sevindi",
-      "email": "nsevindi87@gmail.com",
-      "mobile": 782358852,
-      "address": "In der Härti 11",
-      "services": "Pizza"
+      "id": "25b7",
+      "name": "Castle Horf",
+      "email": "horfli_33@hotmail.com",
+      "mobile": 553445343,
+      "address": "Althorf Strasse 34 4554 Solothorn CH",
+      "services": "Kebap"
     }
   ],
   "categories": [],

@@ -12,7 +12,9 @@
           Add Restaurant
         </button>
         &nbsp; &nbsp;
-        <button routerLink="/login" class="btn btn-warning">Logout</button>
+        <button routerLink="/login" class="btn btn-warning" (click)="logout()">
+          Logout
+        </button>
       </div>
     </div>
   </nav>
@@ -31,6 +33,8 @@
       type="text"
       style="width: 20%; margin-left: 72%"
       class="form-control"
+      placeholder="Filter by name"
+      [formControl]="filterValue"
     />
   </div>
 
@@ -48,8 +52,13 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let resto of allRestaurantData; let i = index">
-          <td>1</td>
+        <tr
+          *ngFor="
+            let resto of filteredRestaurantData.slice().reverse();
+            let i = index
+          "
+        >
+          <td>{{ i + 1 }}</td>
           <td>{{ resto.name }}</td>
           <td>{{ resto.email }}</td>
           <td>{{ resto.mobile }}</td>
@@ -194,6 +203,7 @@
               type="button"
               class="btn btn-success"
               (click)="updateRes()"
+              data-bs-dismiss="modal"
             >
               Update Details
             </button>

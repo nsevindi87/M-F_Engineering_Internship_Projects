@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../service/api.service';
 import { OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { RestaurantData } from './restaurant.model';
 
 @Component({
@@ -18,7 +18,9 @@ export class RestaurantDashComponent implements OnInit {
   restaurantModelObj:RestaurantData = new RestaurantData;
   showAdd!:boolean;
   showBtn!:boolean;
-  userFilter:any = {name:''}
+
+  filteredRestaurantData: any;
+  filterValue: FormControl = new FormControl('');
 
   constructor(private api:ApiService, private fb:FormBuilder){}
 
@@ -32,14 +34,24 @@ export class RestaurantDashComponent implements OnInit {
     });
 
     this.getAllRes()
-    
+
+    this.filterValue.valueChanges.subscribe(value => {
+      this.applyFilter(value);
+    });
   }
 
   getAllRes(){
     this.api.getRestaurant().subscribe((res:any)=>{
     this.allRestaurantData = res;
+    this.filteredRestaurantData = res; 
     console.log(this.allRestaurantData);
     })
+  }
+
+  applyFilter(value: string) {
+    this.filteredRestaurantData = this.allRestaurantData.filter((restaurant: any) =>
+      restaurant.name.toLowerCase().includes(value.toLowerCase())
+    );
   }
 
   clickAddreso(){
@@ -91,7 +103,7 @@ export class RestaurantDashComponent implements OnInit {
     this.restaurantModelObj.address = this.formValue.value.address;
     this.restaurantModelObj.services = this.formValue.value.services;
     this.api.updateRestaurant(this.restaurantModelObj, this.restaurantModelObj.id).subscribe(res=>{
-      alert(res);
+      alert("Your informations are updated!");
       this.formValue.reset();
       this.getAllRes();
     },error =>{
@@ -100,6 +112,8 @@ export class RestaurantDashComponent implements OnInit {
   }
 
   logout(){
+    localStorage.clear();
     alert("Logged Out!")
+
   }
 }
