@@ -7,6 +7,7 @@
           class="btn btn-success"
           data-bs-toggle="modal"
           data-bs-target="#restoModal"
+          (click)="clickAddreso()"
         >
           Add Restaurant
         </button>
@@ -49,20 +50,23 @@
       <tbody>
         <tr *ngFor="let resto of allRestaurantData; let i = index">
           <td>1</td>
-          <td>Zurich</td>
-          <td>kingrestaurant@gmx.ch</td>
-          <td>042 553 3443</td>
-          <td>Langstrasse 34 8449 Zurich</td>
-          <td>Alacart</td>
+          <td>{{ resto.name }}</td>
+          <td>{{ resto.email }}</td>
+          <td>{{ resto.mobile }}</td>
+          <td>{{ resto.address }}</td>
+          <td>{{ resto.services }}</td>
           <td>
             <mat-icon
               data-bs-toggle="modal"
               data-bs-target="#restoModal"
               style="color: #dbd951"
+              (click)="onEditRes(resto)"
               >edit</mat-icon
             >
             &nbsp;
-            <mat-icon style="color: #ff0000">delete</mat-icon>
+            <mat-icon style="color: #ff0000" (click)="deleteResto(resto)"
+              >delete</mat-icon
+            >
           </td>
         </tr>
       </tbody>
@@ -105,7 +109,7 @@
           </div>
 
           <div class="modal-body" style="background: white">
-            <form>
+            <form [formGroup]="formValue">
               <div class="form-group">
                 <label for="inputName">Name</label>
                 <input
@@ -181,6 +185,7 @@
               type="button"
               class="btn btn-success"
               (click)="addResto()"
+              data-bs-dismiss="modal"
             >
               Add Details
             </button>

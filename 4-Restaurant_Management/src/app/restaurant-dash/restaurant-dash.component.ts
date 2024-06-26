@@ -55,7 +55,7 @@ export class RestaurantDashComponent implements OnInit {
     this.restaurantModelObj.address = this.formValue.value.address;
     this.restaurantModelObj.services = this.formValue.value.services;
     this.api.postRestaurant(this.restaurantModelObj).subscribe(res=>{
-      alert(res);
+      alert("Your New Restaurant is added!");
       this.formValue.reset();
       this.getAllRes();
     },error =>{
@@ -67,7 +67,7 @@ export class RestaurantDashComponent implements OnInit {
   deleteResto(data:any){
     if(confirm("Are you sure want to delete records?"))
     this.api.deleteRestaurant(data.id).subscribe(res=>{
-      alert(res);
+      alert("Deleted!");
       this.getAllRes();
     })
   }

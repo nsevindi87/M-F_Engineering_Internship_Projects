@@ -1,12 +1,28 @@
 {
   "posts": [
     {
-      "id": "1",
-      "name": "Samsung S5",
-      "email": "Samsung S5",
-      "mobile": 1000,
-      "address": "1.jpeg",
+      "id": "2",
+      "name": "Samsung S7",
+      "email": "Samsung S6",
+      "mobile": 3000,
+      "address": "3.jpeg",
       "services": "Good"
+    },
+    {
+      "id": 0,
+      "name": "Nizami Sevindi",
+      "email": "nsevindi87@gmail.com",
+      "mobile": 779579844,
+      "address": "In der Härti 11",
+      "services": "Pizza"
+    },
+    {
+      "id": 0,
+      "name": "Merve Sevindi",
+      "email": "nsevindi87@gmail.com",
+      "mobile": 782358852,
+      "address": "In der Härti 11",
+      "services": "Pizza"
     }
   ],
   "categories": [],
