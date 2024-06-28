@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-form',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./reactive-form.component.css']
 })
 export class ReactiveFormComponent {
+  name = new FormControl('');
 
+  handleReset(){
+    this.name.setValue("Default Value")
+  }
 }

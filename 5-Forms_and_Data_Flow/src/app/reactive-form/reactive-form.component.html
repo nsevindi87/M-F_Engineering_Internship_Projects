@@ -1,1 +1,21 @@
-<p>reactive-form works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <label for="name">Name: </label>
+      <input
+        id="name"
+        type="text"
+        [formControl]="name"
+        style="border-radius: 10px"
+        class="ms-4"
+      />
+
+      <button class="btn btn-warning ms-4" (click)="handleReset()">
+        Reset Value
+      </button>
+
+      <hr />
+      <p>Value: {{ name.value }}</p>
+    </div>
+  </div>
+</div>

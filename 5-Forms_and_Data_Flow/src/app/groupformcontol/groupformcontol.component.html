@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="row">
+    <h1>Grouping form controls</h1>
+    <div class="col-6">
+      <form [formGroup]="myProfile" (ngSubmit)="handleSubmit()">
+        <div class="form-group">
+          <label for="firstname">First Name : </label>
+          <input type="text" id="firstname" formControlName="firstname" />
+        </div>
+        <div class="form-group my-3">
+          <label for="lastname">Last Name : </label>
+          <input type="text" id="lastname" formControlName="lastname" />
+        </div>
+        <button
+          [disabled]="!myProfile.valid"
+          type="submit"
+          class="btn btn-warning"
+        >
+          Submit
+        </button>
+      </form>
+      <p>First Name : {{ profilename }}</p>
+      <p>Last Name: {{ profilelastname }}</p>
+    </div>
+  </div>
+</div>
+<hr />
+<div class="container">
+  <div class="row">
+    <h1>Grouping nested form controls</h1>
+    <div class="col-6">
+      <form [formGroup]="myBigProfile" (ngSubmit)="handleSubmit2()">
+        <div class="form-group">
+          <label for="firstname">First Name : </label>
+          <input type="text" id="firstname" formControlName="firstname" />
+        </div>
+        <div class="form-group my-3">
+          <label for="lastname">Last Name : </label>
+          <input type="text" id="lastname" formControlName="lastname" />
+        </div>
+
+        <div formGroupName="address">
+          <h1>Address</h1>
+          <div class="form-group my-3">
+            <label for="street">Street : </label>
+            <input type="text" id="street" formControlName="street" />
+          </div>
+          <div class="form-group my-3">
+            <label for="city">City : </label>
+            <input type="text" id="city" formControlName="city" />
+          </div>
+        </div>
+
+        <button
+          [disabled]="!myProfile.valid"
+          type="submit"
+          class="btn btn-warning"
+        >
+          Submit
+        </button>
+        <button class="btn btn-danger" type="button" (click)="updateProfile()">
+          Update Profile
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
